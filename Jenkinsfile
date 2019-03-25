@@ -6,7 +6,7 @@ node('maven'){
     }
     stage('Execute Test Cases'){
         echo "Executing Test Cases"
-        sh "${mvnHome}/bin/mvn clean test surefire-report:reports-only"
+        sh "${mvnHome}/bin/mvn clean test surefire-reports:report-only"
         archiveArtifacts allowEmptyArchive: true, artifacts: 'target/surefire-reports/*'
         junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
         //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'surefire-report.html', reportName: 'HTMLReport', reportTitles: ''])
