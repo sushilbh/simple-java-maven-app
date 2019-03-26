@@ -18,4 +18,5 @@ node('maven'){
     }
     stage ('generating surfire report'){
         sh "${mvnHome}/bin/mvn surefire-report:report-only"
+    }
 }
