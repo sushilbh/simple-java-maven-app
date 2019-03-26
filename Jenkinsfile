@@ -4,4 +4,5 @@ node('maven'){
         echo "Downloading the source code."
         git credentialsId: 'githubaccount', url: 'https://github.com/lokeshkamalay/simple-java-maven-app.git'
     }
+}
   
