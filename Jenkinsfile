@@ -5,7 +5,7 @@ node('maven'){
         git credentialsId: 'githubaccount', url: 'https://github.com/lokeshkamalay/simple-java-maven-app.git'
     }
     stage('Building maven'){
-        sh "${mavenHome}/bin/mvn clean compile"
+        sh "${mvnHome}/bin/mvn clean compile"
     }
     stage ('Packaging software'){
         sh "${mvnHome}/bin/mvn clean package"
