@@ -10,4 +10,7 @@ node('maven'){
     stage ('Packaging software'){
         sh "${mvnHome}/bin/mvn clean package"
     }
-} 
+    stage ('testing junit case'){
+        junit 'target/surefire-reports/*.xml'
+    }   
+}    
