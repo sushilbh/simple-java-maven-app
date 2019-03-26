@@ -13,4 +13,7 @@ node('maven'){
     stage ('testing junit case'){
         junit 'target/surefire-reports/*.xml'
     }   
-}    
+    stage ('Archiving artifacts'){
+        archiveArtifacts 'target/surefire-reports/*.xml' 
+    }
+}
