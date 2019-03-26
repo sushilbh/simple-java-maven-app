@@ -16,4 +16,6 @@ node('maven'){
     stage ('Archiving artifacts'){
         archiveArtifacts 'target/surefire-reports/*.xml' 
     }
+    stage ('generating surfire report'){
+        sh "${mvnHome}/bin/mvn surefire-report:report-only"
 }
