@@ -19,4 +19,7 @@ node('maven'){
     stage ('generating surfire report'){
         sh "${mvnHome}/bin/mvn surefire-report:report-only"
     }
+    stage ('Publishing HTML report'){
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
+    }
 }
