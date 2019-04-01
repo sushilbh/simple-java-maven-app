@@ -22,8 +22,13 @@ node('maven'){
     stage ('Publishing HTML report'){
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
     }
+    timeout(time: 30, unit: 'SECONDS') {
+     input message: 'Do you want to Deploy?', ok: 'Deploy'
+     sh "mutt -s 'The job is completed' sushilb126@gmail.com"
+     }
     stage ('Sending jar file to AWS s3 bucket'){
     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-iam-key', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
     sh "aws s3 cp target/my-app-1-RELEASE.jar s3://sushil-bh/"
     }
+    }    
 }
