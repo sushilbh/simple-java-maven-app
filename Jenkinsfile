@@ -32,7 +32,7 @@ node('maven'){
     }
     stage ('Deploying package to the target machine'){
         sshagent(['ssh-agent']) {
-    sh "scp -o StringHostKeyChecking=no target/my-app-1-RELEASE.jar ec2-user@34.205.30.165:~/"
+    sh "scp -o StringHostKeyChecking=no target/my-app-1-RELEASE.jar ec2-user@34.205.30.165:/home/ec2-user"
 }
     }
     }    
