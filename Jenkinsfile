@@ -30,5 +30,10 @@ node('maven'){
     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-iam-key', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
     sh "aws s3 cp target/my-app-1-RELEASE.jar s3://sushil-bh/"
     }
+    stage ('Deploying package to the target machine'){
+        sshagent(['ssh-agent']) {
+    sh "scp -o StringHostKeyChecking=no target/my-app-1-RELEASE.jar ec2-user@34.205.30.165:~/"
+}
+    }
     }    
 }
