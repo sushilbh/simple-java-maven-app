@@ -1,4 +1,4 @@
-node('mavenbuilds'){
+node('maven'){
     def mvnHome = tool name: 'maven354', type: 'maven'
     stage('Checkout'){
         echo "Downloading the source code"
