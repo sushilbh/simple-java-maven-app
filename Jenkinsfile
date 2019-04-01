@@ -22,7 +22,7 @@ node('maven'){
     stage ('Publishing HTML report'){
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
     }
-    timeout(time: 30, unit: 'SECONDS') {
+    timeout(time: 30, unit: 'MINUTES') {
      input message: 'Do you want to Deploy?', ok: 'Deploy'
      sh "mutt -s 'The job is completed' sushilb126@gmail.com"
      }
