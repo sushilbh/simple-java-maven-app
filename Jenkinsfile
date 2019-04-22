@@ -5,7 +5,7 @@ node('docker'){
         checkout scm
     }
     stage('Executing Test Cases'){
-        docker.image('sushilbh/jfrog:maven').inside(){
+        docker.image('sushilbh/jfrog:tagname').inside(){
             echo "Execuring Test Cases Started"
             sh "mvn clean deploy --settings settings.xml"
         }
