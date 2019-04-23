@@ -51,12 +51,12 @@
      <repository>
         <id>artifactory-releases</id>
         <name>artifactory</name>
-        <url>http://e6aec507.ngrok.io/artifactory/virtualrepo-1</url>
+        <url>http://241013c1.ngrok.io/artifactory/virtualrepo-1</url>
     </repository>
     <snapshotRepository>
         <id>artifactory-snapshots</id>
         <name>artifactory</name>
-        <url>http://e6aec507.ngrok.io/artifactory/virtualrepo-1</url>
+        <url>http://241013c1.ngrok.io/artifactory/virtualrepo-1</url>
     </snapshotRepository>
 </distributionManagement>  
 </project>
