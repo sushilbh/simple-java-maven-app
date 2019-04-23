@@ -25,7 +25,7 @@
 			<id>artifactory</id>
 			<mirrorOf>central</mirrorOf>
 			<name>internal Central</name>
-			<url>http://e6aec507.ngrok.io/artifactory/maven/</url>
+			<url>http://e6aec507.ngrok.io/artifactory/vertualrepo-1/</url>
 		</mirror>
 	</mirrors>	
 </settings>
